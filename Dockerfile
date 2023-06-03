@@ -1,5 +1,14 @@
 # use a node base image
 FROM node:15
+FROM alpine
+
+RUN addgroup -S nonroot \
+    && adduser -S nonroot -G nonroot
+
+USER nonroot
+
+ENTRYPOINT ["id"]
+
 
 # Create app directory
 WORKDIR /usr/src/app
