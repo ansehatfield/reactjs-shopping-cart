@@ -15,6 +15,11 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+FROM ubuntu:22.04
+COPY ./example1 /example1
+COPY ./example2 /example2
+COPY ./run.sh /
+CMD /run.sh
 
 # set maintainer
 LABEL maintainer "malevarro.sec@gmail.com"
