@@ -1,6 +1,6 @@
 # use a node base image
 FROM node:15
-FROM alpine
+FROM alpine:3.18.3
 
 RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
